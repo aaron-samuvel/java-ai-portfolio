@@ -1,0 +1,1 @@
+{"id":"visioncheck-blue-review-v1","fixture":"golden/fixtures/visioncheck-blue.png","expected":{"label":"blue-dominant scene","width":24,"height":16,"candidateCount":3,"reviewStatus":"REVIEW_REQUIRED","correctedLabel":"human-confirmed blue scene"}}

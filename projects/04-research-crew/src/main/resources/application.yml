@@ -1,0 +1,19 @@
+server:
+  port: ${SERVER_PORT:8084}
+  address: 127.0.0.1
+spring:
+  application:
+    name: research-crew
+  datasource:
+    url: ${RESEARCH_CREW_PLAN_DB_URL:jdbc:h2:file:./data/research-crew-plans;DB_CLOSE_ON_EXIT=FALSE}
+    username: ${RESEARCH_CREW_PLAN_DB_USERNAME:sa}
+    password: ${RESEARCH_CREW_PLAN_DB_PASSWORD:}
+    driver-class-name: org.h2.Driver
+research-crew:
+  checkpoints:
+    enabled: ${RESEARCH_CREW_CHECKPOINTS_ENABLED:false}
+    host: ${RESEARCH_CREW_DB_HOST:127.0.0.1}
+    port: ${RESEARCH_CREW_DB_PORT:5433}
+    database: ${RESEARCH_CREW_DB_NAME:research_crew}
+    username: ${RESEARCH_CREW_DB_USERNAME:research_crew}
+    password: ${RESEARCH_CREW_DB_PASSWORD:}

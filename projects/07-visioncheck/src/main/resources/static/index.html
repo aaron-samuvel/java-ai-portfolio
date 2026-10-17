@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111c2e">
+    <title>VisionCheck — Local image review</title>
+    <link rel="stylesheet" href="/visioncheck.css">
+    <script type="module" src="/visioncheck.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="VisionCheck home"><span class="brand-mark">V</span> VisionCheck</a>
+      <span class="local-pill"><span aria-hidden="true"></span> Local-only demo</span>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">IMAGE REVIEW WORKSPACE</p>
+        <h1 id="page-title">A human stays<br><span>in the loop.</span></h1>
+        <p class="lede">Inspect a photo, compare the colour-based candidates, then confirm or correct the suggested label.</p>
+        <div class="privacy-note"><span aria-hidden="true">⌑</span><p><strong>Your image stays out of the review queue.</strong><br>It is processed in memory and never stored by this demo.</p></div>
+      </section>
+
+      <section class="workspace" aria-label="Image classification and review">
+        <div class="panel upload-panel">
+          <div class="panel-heading"><div><p class="eyebrow">01 / CLASSIFY</p><h2>Choose an image</h2></div><span class="step-number">01</span></div>
+          <form id="upload-form">
+            <label id="drop-zone" class="drop-zone" for="image-file" tabindex="0">
+              <input id="image-file" name="image" type="file" accept="image/png,image/jpeg,.png,.jpg,.jpeg" required>
+              <span class="upload-icon" aria-hidden="true">↑</span>
+              <span class="drop-title">Drop a PNG or JPEG here</span>
+              <span class="drop-subtitle">or <span class="browse-link">browse files</span> · up to 5 MB</span>
+            </label>
+            <div id="file-summary" class="file-summary" hidden></div>
+            <button id="classify-button" class="button primary" type="submit" disabled>Analyze image <span aria-hidden="true">↗</span></button>
+          </form>
+          <p id="upload-message" class="message" role="status" aria-live="polite">Select an image to begin.</p>
+        </div>
+
+        <div id="result-panel" class="panel result-panel" hidden aria-live="polite">
+          <div class="panel-heading"><div><p class="eyebrow">02 / MODEL SIGNAL</p><h2>Candidate labels</h2></div><span class="status-chip">Human review</span></div>
+          <div class="result-layout">
+            <figure class="preview-frame"><img id="image-preview" alt="Local preview of the selected image"><figcaption id="image-caption"></figcaption></figure>
+            <div class="result-details">
+              <div class="suggested-label"><span class="detail-label">TOP CANDIDATE</span><strong id="predicted-label">—</strong><span id="image-dimensions" class="muted"></span></div>
+              <ol id="candidate-list" class="candidate-list"></ol>
+              <p id="result-notice" class="notice"></p>
+              <button id="review-result-button" class="button secondary" type="button">Review this prediction <span aria-hidden="true">↓</span></button>
+            </div>
+          </div>
+        </div>
+
+        <section id="review-panel" class="panel review-panel" aria-labelledby="review-title">
+          <div class="panel-heading"><div><p class="eyebrow">03 / HUMAN CHECK</p><h2 id="review-title">Pending reviews</h2></div><span id="pending-count" class="count-chip">0</span></div>
+          <p class="section-copy">The queue contains labels and image dimensions only. Confirm a prediction or record a corrected label.</p>
+          <div id="review-list" class="review-list"><div class="empty-state"><span aria-hidden="true">✓</span><p>Loading review queue…</p></div></div>
+          <p id="review-message" class="message" role="status" aria-live="polite"></p>
+        </section>
+      </section>
+    </main>
+    <footer><span>VISIONCHECK / LOCAL LEARNING PROJECT</span><span>Scores are heuristic signals, not calibrated probabilities.</span></footer>
+  </body>
+</html>

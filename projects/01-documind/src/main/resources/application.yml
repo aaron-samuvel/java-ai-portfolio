@@ -1,0 +1,60 @@
+server:
+  port: 8081
+  error:
+    include-message: never
+
+spring:
+  application:
+    name: documind
+  datasource:
+    url: ${DOCUMIND_DB_URL:jdbc:postgresql://localhost:5432/documind}
+    username: ${DOCUMIND_DB_USERNAME:documind}
+    password: ${DOCUMIND_DB_PASSWORD:documind-local-only}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 26MB
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        options:
+          model: ${OLLAMA_CHAT_MODEL:qwen2.5:7b}
+          temperature: 0.1
+      embedding:
+        options:
+          model: ${OLLAMA_EMBEDDING_MODEL:nomic-embed-text}
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 768
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never
+
+documind:
+  ingestion:
+    chunk-size: ${DOCUMIND_CHUNK_SIZE:700}
+    min-chunk-size-chars: ${DOCUMIND_MIN_CHUNK_SIZE_CHARS:350}
+    max-chunks: ${DOCUMIND_MAX_CHUNKS:2000}
+    overlap-words: ${DOCUMIND_CHUNK_OVERLAP_WORDS:40}
+  storage:
+    directory: ${DOCUMIND_STORAGE_DIRECTORY:data/documind/uploads}
+  retrieval:
+    top-k: ${DOCUMIND_TOP_K:5}
+    similarity-threshold: ${DOCUMIND_SIMILARITY_THRESHOLD:0.55}
+

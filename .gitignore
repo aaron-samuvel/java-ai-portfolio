@@ -1,0 +1,12 @@
+**/target/
+/.m2/
+**/node_modules/
+**/dist/
+.idea/
+.vscode/
+.env
+!.env.example
+data/
+*.log
+/.run/
+

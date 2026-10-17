@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directories:
+      - /projects/*
+    schedule:
+      interval: weekly
+    groups:
+      spring-and-test-updates:
+        patterns:
+          - org.springframework.*
+          - org.junit.*
+          - org.mockito.*
+  - package-ecosystem: npm
+    directory: /projects/01-documind/frontend
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

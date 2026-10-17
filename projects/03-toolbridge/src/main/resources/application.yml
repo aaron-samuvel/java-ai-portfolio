@@ -1,0 +1,25 @@
+server:
+  address: 127.0.0.1
+  port: ${SERVER_PORT:8083}
+spring:
+  application:
+    name: toolbridge
+  datasource:
+    url: jdbc:h2:mem:toolbridge
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+  ai:
+    mcp:
+      server:
+        name: toolbridge
+        version: 0.1.0
+        protocol: STREAMABLE
+        type: SYNC
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

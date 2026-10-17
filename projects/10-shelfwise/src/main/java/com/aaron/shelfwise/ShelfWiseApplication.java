@@ -1,0 +1,3 @@
+package com.aaron.shelfwise;
+import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication public class ShelfWiseApplication { public static void main(String[] args){SpringApplication.run(ShelfWiseApplication.class,args);} }

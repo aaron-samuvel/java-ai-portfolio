@@ -1,0 +1,10 @@
+server:
+  port: ${SERVER_PORT:8087}
+  address: 127.0.0.1
+spring:
+  application:
+    name: visioncheck
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB

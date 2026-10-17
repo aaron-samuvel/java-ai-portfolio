@@ -1,0 +1,1 @@
+{"id":"papertrail-invoice-v1","fixture":"fixtures/invoice-extraction-fixture.pdf","expected":{"invoiceNumber":"INV-PT-2026-001","supplier":"Northstar Supplies","buyer":"Aaron S","currency":"INR","gstin":"27AABCU9603R1ZN","itemDescription":"Widget","quantity":2,"unitPrice":10.0,"lineAmount":20.0,"subtotal":20.0,"tax":1.6,"total":21.6,"status":"EXTRACTED_REVIEW_BEFORE_PAYMENT"}}

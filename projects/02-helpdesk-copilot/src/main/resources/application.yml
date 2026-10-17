@@ -1,0 +1,49 @@
+server:
+  address: 127.0.0.1
+  port: ${SERVER_PORT:8082}
+spring:
+  application:
+    name: helpdesk-copilot
+  datasource:
+    url: ${HELPDESK_DB_URL:jdbc:h2:file:./data/helpdesk;AUTO_SERVER=TRUE}
+    username: ${HELPDESK_DB_USERNAME:sa}
+    password: ${HELPDESK_DB_PASSWORD:}
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: always
+  threads:
+    virtual:
+      enabled: true
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2s
+helpdesk:
+  security:
+    customer-1001:
+      password: ${HELPDESK_CUSTOMER_1001_PASSWORD:customer-1001-local}
+    customer-2002:
+      password: ${HELPDESK_CUSTOMER_2002_PASSWORD:customer-2002-local}
+    operator:
+      password: ${HELPDESK_OPERATOR_PASSWORD:operator-local}
+  memory:
+    redis:
+      enabled: ${HELPDESK_REDIS_MEMORY_ENABLED:false}
+langchain4j:
+  ollama:
+    chat-model:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      model-name: ${OLLAMA_MODEL:llama3.2}
+      temperature: 0.1
+      timeout: PT90S
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true

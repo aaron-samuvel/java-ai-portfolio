@@ -1,0 +1,83 @@
+name: portfolio-ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  java:
+    name: ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - 01-documind
+          - 02-helpdesk-copilot
+          - 03-toolbridge
+          - 04-research-crew
+          - 05-reviewpilot
+          - 06-fraudguard
+          - 07-visioncheck
+          - 08-askyourdata
+          - 09-voicenotes
+          - 10-shelfwise
+          - 11-papertrail
+          - 12-evalops
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: projects/${{ matrix.project }}/pom.xml
+      - name: Verify project
+        run: mvn -B verify -f projects/${{ matrix.project }}/pom.xml
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ matrix.project }}
+          path: |
+            projects/${{ matrix.project }}/target/surefire-reports/**
+            projects/${{ matrix.project }}/target/failsafe-reports/**
+          if-no-files-found: ignore
+
+  documind-frontend:
+    name: DocuMind frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/01-documind/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: projects/01-documind/frontend/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+  documind-image:
+    name: Build DocuMind container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image without publishing
+        run: docker build --tag documind:ci projects/01-documind
+
+  papertrail-ocr-image:
+    name: PaperTrail scanned-invoice container smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image and exercise the scanned-PDF extraction endpoint
+        shell: pwsh
+        run: ./projects/11-papertrail/scripts/test-ocr-container.ps1 -ImageTag papertrail-ocr:ci

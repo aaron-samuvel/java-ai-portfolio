@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT:8092}
+  address: 127.0.0.1
+evalops:
+  askyourdata-base-url: ${EVALOPS_ASKYOURDATA_BASE_URL:http://127.0.0.1:8088}
+  documind-base-url: ${EVALOPS_DOCUMIND_BASE_URL:http://127.0.0.1:8081}
+  papertrail-base-url: ${EVALOPS_PAPERTRAIL_BASE_URL:http://127.0.0.1:8091}
+  visioncheck-base-url: ${EVALOPS_VISIONCHECK_BASE_URL:http://127.0.0.1:8087}
+  gates:
+    askyourdata-minimum-pass-rate: ${EVALOPS_ASKYOURDATA_MINIMUM_PASS_RATE:0.80}
+    documind-minimum-pass-rate: ${EVALOPS_DOCUMIND_MINIMUM_PASS_RATE:0.67}
+    papertrail-minimum-pass-rate: ${EVALOPS_PAPERTRAIL_MINIMUM_PASS_RATE:1.0}
+    visioncheck-minimum-pass-rate: ${EVALOPS_VISIONCHECK_MINIMUM_PASS_RATE:1.0}
+  parallelism: ${EVALOPS_PARALLELISM:4}
+  queue-capacity: ${EVALOPS_QUEUE_CAPACITY:64}
+spring:
+  application:
+    name: evalops
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  tracing:
+    sampling:
+      probability: ${EVALOPS_TRACING_SAMPLE_PROBABILITY:1.0}
+  otlp:
+    metrics:
+      export:
+        enabled: ${EVALOPS_OTLP_METRICS_ENABLED:false}
+        url: ${EVALOPS_OTLP_METRICS_URL:http://127.0.0.1:4318/v1/metrics}
+        step: ${EVALOPS_OTLP_METRICS_STEP:10s}
+    tracing:
+      export:
+        enabled: ${EVALOPS_OTLP_TRACING_ENABLED:false}
+      endpoint: ${EVALOPS_OTLP_TRACING_ENDPOINT:http://127.0.0.1:4318/v1/traces}

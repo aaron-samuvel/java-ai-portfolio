@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101820" />
+    <meta name="description" content="A local showcase of twelve Java AI learning projects built with Spring Boot." />
+    <title>Java AI Project Portfolio</title>
+    <link rel="stylesheet" href="site/styles.css" />
+    <script src="site/portfolio.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Java AI portfolio home">
+        <span class="brand-mark" aria-hidden="true">JA</span>
+        <span>JAVA AI <span class="brand-muted">/ PORTFOLIO</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/docs/showcase-scope.md">Scope</a>
+        <a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/docs/project-progress.md">Progress</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> JAVA AI LEARNING SHOWCASE</p>
+          <h1 id="hero-title">Twelve small projects.<br /><span>One Java AI learning path.</span></h1>
+          <p class="hero-summary">Explore practical AI patterns through runnable Spring Boot apps—from document Q&amp;A and safe tools to recommendations, invoice extraction, and evaluation.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore the projects <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://github.com/aaron-samuvel/java-ai-portfolio">Repository guide <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="Showcase details">
+          <div class="note-kicker">THE PORTFOLIO</div>
+          <div class="note-number">12<span>×</span></div>
+          <div class="note-title">independent Java apps</div>
+          <div class="note-divider"></div>
+          <div class="note-row"><span>Framework</span><strong>Spring Boot</strong></div>
+          <div class="note-row"><span>Default mode</span><strong>Local first</strong></div>
+          <div class="note-row"><span>Audience</span><strong>Learning &amp; demos</strong></div>
+        </aside>
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      </section>
+
+      <section class="project-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE COLLECTION <span class="heading-line"></span></p>
+            <h2 id="projects-title">Pick a project to explore</h2>
+          </div>
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Search projects</span>
+            <input id="project-search" type="search" placeholder="Search projects or topics" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter projects by topic">
+          <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All projects <span>12</span></button>
+          <button class="filter-chip" type="button" data-filter="language" aria-pressed="false">Language &amp; agents</button>
+          <button class="filter-chip" type="button" data-filter="data" aria-pressed="false">Data &amp; evaluation</button>
+          <button class="filter-chip" type="button" data-filter="vision" aria-pressed="false">Vision &amp; documents</button>
+          <span class="result-count" id="result-count" aria-live="polite">12 projects</span>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project-card" data-category="vision" data-search="documind document rag retrieval citations spring ai vector search">
+            <div class="card-top"><span class="project-number">01</span><span class="project-icon icon-blue" aria-hidden="true">▤</span></div>
+            <p class="card-label">DOCUMENTS · RAG</p><h3>DocuMind</h3>
+            <p class="card-description">Ask questions about your files and follow answers back to cited passages.</p>
+            <div class="card-tags"><span>Spring AI</span><span>pgvector</span><span>React</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/01-documind/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8081 local</span></div>
+          </article>
+          <article class="project-card" data-category="language" data-search="helpdesk copilot customer support tools memory guardrails human handoff">
+            <div class="card-top"><span class="project-number">02</span><span class="project-icon icon-violet" aria-hidden="true">✳</span></div>
+            <p class="card-label">ASSISTANTS · TOOLS</p><h3>HelpDesk Copilot</h3>
+            <p class="card-description">A support assistant with customer-scoped tools, memory, and an operator handoff.</p>
+            <div class="card-tags"><span>LangChain4j</span><span>Ollama</span><span>Guardrails</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/02-helpdesk-copilot/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8082 local</span></div>
+          </article>
+          <article class="project-card" data-category="language" data-search="toolbridge mcp model context protocol tools sql catalog maven">
+            <div class="card-top"><span class="project-number">03</span><span class="project-icon icon-orange" aria-hidden="true">⌘</span></div>
+            <p class="card-label">TOOLS · MCP</p><h3>ToolBridge</h3>
+            <p class="card-description">Connect an MCP client to bounded catalog, Maven, and read-only sample-data tools.</p>
+            <div class="card-tags"><span>Spring AI</span><span>MCP</span><span>Read only</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/03-toolbridge/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8083 local</span></div>
+          </article>
+          <article class="project-card" data-category="language" data-search="research crew agents planning approval cited report sources langgraph">
+            <div class="card-top"><span class="project-number">04</span><span class="project-icon icon-green" aria-hidden="true">⌁</span></div>
+            <p class="card-label">AGENTS · RESEARCH</p><h3>Research Crew</h3>
+            <p class="card-description">Review a research plan, approve it, and get a report grounded in local source cards.</p>
+            <div class="card-tags"><span>LangGraph4j</span><span>Human review</span><span>Citations</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/04-research-crew/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8084 local</span></div>
+          </article>
+          <article class="project-card" data-category="language" data-search="reviewpilot pull request code review diff webhook security findings">
+            <div class="card-top"><span class="project-number">05</span><span class="project-icon icon-pink" aria-hidden="true">⌁</span></div>
+            <p class="card-label">CODE · REVIEW</p><h3>ReviewPilot</h3>
+            <p class="card-description">Scan changed lines for common review signals and inspect verified webhook events.</p>
+            <div class="card-tags"><span>Unified diff</span><span>HMAC</span><span>Local queue</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/05-reviewpilot/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8085 local</span></div>
+          </article>
+          <article class="project-card" data-category="data" data-search="fraudguard fraud machine learning classification scoring drift calibration transactions">
+            <div class="card-top"><span class="project-number">06</span><span class="project-icon icon-red" aria-hidden="true">⌁</span></div>
+            <p class="card-label">MACHINE LEARNING · RISK</p><h3>FraudGuard</h3>
+            <p class="card-description">Score synthetic transactions and inspect feature contributions, drift, and review labels.</p>
+            <div class="card-tags"><span>Logistic model</span><span>PSI drift</span><span>Synthetic data</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/06-fraudguard/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8086 local</span></div>
+          </article>
+          <article class="project-card" data-category="vision" data-search="visioncheck image classification visual inspection review png jpeg">
+            <div class="card-top"><span class="project-number">07</span><span class="project-icon icon-cyan" aria-hidden="true">▧</span></div>
+            <p class="card-label">VISION · INSPECTION</p><h3>VisionCheck</h3>
+            <p class="card-description">Preview an image, compare color-based candidates, and confirm a review label.</p>
+            <div class="card-tags"><span>Image upload</span><span>Browser UI</span><span>Human review</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/07-visioncheck/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8087 local</span></div>
+          </article>
+          <article class="project-card" data-category="data" data-search="askyourdata sql analytics natural language database reports safety">
+            <div class="card-top"><span class="project-number">08</span><span class="project-icon icon-yellow" aria-hidden="true">▦</span></div>
+            <p class="card-label">DATA · ANALYTICS</p><h3>AskYourData</h3>
+            <p class="card-description">Turn supported questions into bounded, read-only reports over sample sales data.</p>
+            <div class="card-tags"><span>Spring Boot</span><span>H2</span><span>SQL policy</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/08-askyourdata/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8088 local</span></div>
+          </article>
+          <article class="project-card" data-category="language" data-search="voicenotes audio speech transcription summaries decisions actions whisper">
+            <div class="card-top"><span class="project-number">09</span><span class="project-icon icon-purple" aria-hidden="true">◖</span></div>
+            <p class="card-label">AUDIO · NOTES</p><h3>VoiceNotes</h3>
+            <p class="card-description">Transcribe audio with an optional local speech model, then search and summarize notes.</p>
+            <div class="card-tags"><span>Consent first</span><span>Local provider</span><span>Async jobs</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/09-voicenotes/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8089 local</span></div>
+          </article>
+          <article class="project-card" data-category="data" data-search="shelfwise book recommendations embeddings personalization ranking">
+            <div class="card-top"><span class="project-number">10</span><span class="project-icon icon-teal" aria-hidden="true">▤</span></div>
+            <p class="card-label">RECOMMENDATIONS · SEARCH</p><h3>ShelfWise</h3>
+            <p class="card-description">Rank a synthetic catalogue for a reader and inspect simple relevance explanations.</p>
+            <div class="card-tags"><span>Embeddings</span><span>MMR</span><span>Sample catalogue</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/10-shelfwise/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8090 local</span></div>
+          </article>
+          <article class="project-card" data-category="vision" data-search="papertrail invoice receipt ocr extraction tax pdf tesseract">
+            <div class="card-top"><span class="project-number">11</span><span class="project-icon icon-amber" aria-hidden="true">▧</span></div>
+            <p class="card-label">DOCUMENTS · EXTRACTION</p><h3>PaperTrail</h3>
+            <p class="card-description">Extract invoice fields, reconcile totals, and flag uncertain results for human review.</p>
+            <div class="card-tags"><span>Apache Tika</span><span>OCR</span><span>Review status</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/11-papertrail/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8091 local</span></div>
+          </article>
+          <article class="project-card" data-category="data" data-search="evalops evaluation observability quality gates golden tests health metrics">
+            <div class="card-top"><span class="project-number">12</span><span class="project-icon icon-lime" aria-hidden="true">⌗</span></div>
+            <p class="card-label">EVALUATION · QUALITY</p><h3>EvalOps</h3>
+            <p class="card-description">Run golden checks, view quality gates and inspect the health of local portfolio apps.</p>
+            <div class="card-tags"><span>Golden data</span><span>Quality gates</span><span>Metrics</span></div>
+            <div class="card-footer"><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/projects/12-evalops/README.md">Read the guide <span aria-hidden="true">→</span></a><span class="port-link" title="Start the app locally to use this port">8092 local</span></div>
+          </article>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>No projects match that search. Try another name or topic.</div>
+      </section>
+
+      <section class="run-panel" aria-labelledby="run-title">
+        <div class="run-icon" aria-hidden="true">⌘</div>
+        <div><p class="eyebrow">GET STARTED</p><h2 id="run-title">Run one project locally</h2><p>Java 21 and Maven are enough for most demos. Some projects optionally use Ollama, PostgreSQL, Docker, or a speech model.</p></div>
+        <div class="run-command"><span>PowerShell</span><code>./run-project.ps1 -Project 04-research-crew</code><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/docs/setup-guide.md">Setup guide <span aria-hidden="true">→</span></a></div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">JA</span><span>JAVA AI <span class="brand-muted">/ PORTFOLIO</span></span></a><span>Local learning demos · Synthetic data where noted · Not production software</span><a href="https://github.com/aaron-samuvel/java-ai-portfolio/blob/main/docs/showcase-scope.md">Showcase scope <span aria-hidden="true">↑</span></a></footer>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+{"id":"audit-retention","question":"How long are audit logs retained?","expectedEvidence":"audit logs retained days","minimumRecall":0.75}
+{"id":"batch-retry","question":"What happens after a batch record fails?","expectedEvidence":"failed records twice raises alert","minimumRecall":0.75}
+{"id":"fixture-privacy","question":"What privacy rule applies to test fixtures?","expectedEvidence":"fixtures never include confidential customer data","minimumRecall":0.75}
